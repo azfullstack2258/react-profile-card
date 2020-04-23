@@ -1,7 +1,6 @@
-import React from 'react';
-
-import Card from './components/Card';
-import './App.css';
+import * as React from 'react';
+import renderer from 'react-test-renderer';
+import Card from '../Card';
 
 const fakeProfileData = {
   name: "Tavares Hansen",
@@ -15,10 +14,13 @@ const fakeProfileData = {
   avgRating: 4
 };
 
-const App = () => (
-  <div className="container">
-    <Card {...fakeProfileData} />
-  </div>
-);
-
-export default App;
+describe('Profile Card', () => {
+  it('can render a profile card', () => {
+    const tree = renderer.create(<Card {...fakeProfileData} isFavorite={false} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('can render a favorite profile card', () => {
+    const tree = renderer.create(<Card {...fakeProfileData} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

@@ -36,3 +36,59 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  width: 420px;
+  border: 1px solid #9b9b9b;
+  border-radius: 8px;
+}
+
+.card-header,
+.card-footer {
+  background: #efefef;
+}
+
+.card-header {
+  border-bottom: 1px solid #9b9b9b;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+.card-header > button {
+  background: transparent;
+  color: red;
+}
+.card-header > button:hover {
+  background: transparent;
+  color: red;
+}
+
+.card-content {
+  background: white;
+}
+
+.card-footer {
+  border-top: 1px solid #9b9b9b;
+  border-radius: 0px 0px 8px 8px !important;
+}
+
+.card-footer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.card-footer > div > .caption {
+  font-size: 0.5em;
+  color: grey;
+}
+
+.grey-text {
+  font-size: 0.75em;
+  color: grey;
+}
+
+.text-semi-bold {
+  font-weight: 500;
+}
